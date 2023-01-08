@@ -22,10 +22,10 @@ const fetcher = (variables, token) => {
       query userInfo($login: String!) {
         user(login: $login) {
           # fetch only owner repos & not forks
-          repositories(ownerAffiliations: OWNER, isFork: true, first: 1000) {
+          repositories(ownerAffiliations: OWNER, isFork: true, first: 100) {
             nodes {
               name
-              languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              languages(first: 1000, orderBy: {field: SIZE, direction: DESC}) {
                 edges {
                   size
                   node {
